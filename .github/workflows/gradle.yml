@@ -15,6 +15,34 @@ on:
     # Sequence of patterns matched against refs/tags
     tags:        
       - '*'
+  workflow_dispatch:
+    inputs:
+      build_target:
+        description: "Manually trigger a specific build target (optional)"
+        required: true
+        default: ""
+        type: choice
+        options:
+          - ""
+          - "build_folia"
+          - "build_bukkit"
+          - "build_bungeecord_velocity"
+          - "build_fabric_1_16_5"
+          - "build_fabric_1_18_2"
+          - "build_fabric_1_19_2"
+          - "build_fabric_1_20"
+          - "build_fabric_1_20_2"
+          - "build_fabric_1_20_6"
+          - "build_fabric_1_21"
+          - "build_forge_1_7_10"
+          - "build_forge_1_12_2"
+          - "build_forge_1_16_5"
+          - "build_forge_1_18_2"
+          - "build_forge_1_19_2"
+          - "build_forge_1_20"
+          - "build_neoforge_1_20_4"
+          - "build_neoforge_1_20_5"
+          - "build_neoforge_1_21"
 
 jobs:
   build_folia:
